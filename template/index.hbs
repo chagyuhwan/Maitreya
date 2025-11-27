@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{siteName}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <div class="logo-ko">{{siteName}}</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/about">업체소개</a></li>
+                    <li><a href="/services/visit-care">사찰안내</a></li>
+                    <li><a href="/gallery">갤러리</a></li>
+                    <li><a href="/location">오시는길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <!-- 히어로 이미지 -->
+        <section class="hero-image-section">
+            <img src="{{images.hero}}" 
+                 alt="노인 돌봄 서비스"
+                 class="hero-main-image">
+        </section>
+
+        <!-- 이미지 갤러리 섹션 -->
+        <section class="image-gallery-section">
+            <div class="container">
+                <div class="image-gallery-grid">
+                    <a href="/about" class="gallery-image-item animate-on-scroll">
+                        <img src="/images/1.jpeg" alt="업체소개" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3 class="gallery-title">업체소개</h3>
+                                <p class="gallery-subtitle">Introduce</p>
+                            </div>
+                            <button class="gallery-btn">더 알아보기 +</button>
+                        </div>
+                    </a>
+                    <a href="/services/visit-care" class="gallery-image-item animate-on-scroll">
+                        <img src="/images/2.jpeg" alt="사찰안내" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3 class="gallery-title">사찰안내</h3>
+                                <p class="gallery-subtitle">Guide</p>
+                            </div>
+                            <button class="gallery-btn">더 알아보기 +</button>
+                        </div>
+                    </a>
+                    <a href="/gallery" class="gallery-image-item animate-on-scroll">
+                        <img src="/images/3.jpeg" alt="둘러보기" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3 class="gallery-title">둘러보기</h3>
+                                <p class="gallery-subtitle">Gallery</p>
+                            </div>
+                            <button class="gallery-btn">더 알아보기 +</button>
+                        </div>
+                    </a>
+                    <a href="/location" class="gallery-image-item animate-on-scroll">
+                        <img src="/images/4.jpeg" alt="오시는길" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3 class="gallery-title">오시는길</h3>
+                                <p class="gallery-subtitle">Location</p>
+                            </div>
+                            <button class="gallery-btn">더 알아보기 +</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 지도 섹션 -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-container animate-on-scroll">
+                    <div class="map-info-top">
+                        <h2 class="map-title">연락처 <span class="map-title-en">CONTACT</span></h2>
+                        <p class="map-description">궁금하신 점 언제든지 문의 전화주시면 친절히 대답해드리겠습니다.</p>
+                        <div class="map-contact">
+                            <p class="map-phone">{{contact.phone}}</p>
+                        </div>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps?q=대구광역시+북구+연암공원로+55&output=embed"
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="map-iframe">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>{{siteName}}</h3>
+                <p>대표 : {{representative.name}} | 전화 : {{contact.phone}}</p>
+                <p>{{address.full}}</p>
+                <p>고유번호: {{representative.registrationNumber}}</p>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright {{siteName}} all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 카카오톡 플로팅 버튼 -->
+    <a href="tel:{{contact.phone}}" class="kakao-floating-btn" aria-label="카카오톡 상담">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C6.48 3 2 6.48 2 11C2 13.54 3.36 15.78 5.5 17.24L4.5 21L8.5 19.5C9.57 19.81 10.76 20 12 20C17.52 20 22 16.52 22 12C22 7.48 17.52 4 12 4V3Z" fill="#3C1E1E"/>
+            <path d="M12 2C6.48 2 2 5.58 2 10C2 12.54 3.36 14.78 5.5 16.24L4.5 20L8.5 18.5C9.57 18.81 10.76 19 12 19C17.52 19 22 15.42 22 11C22 6.58 17.52 3 12 3V2Z" fill="#FEE500"/>
+        </svg>
+    </a>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

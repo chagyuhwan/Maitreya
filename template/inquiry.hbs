@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담문의 - {{siteName}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <div class="logo-ko">{{siteName}}</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/about">업체소개</a></li>
+                    <li><a href="/services/visit-care">사찰안내</a></li>
+                    <li><a href="/gallery">갤러리</a></li>
+                    <li><a href="/inquiry" class="active">고객센터</a></li>
+                    <li><a href="/location">오시는길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <!-- 히어로 이미지 -->
+        <section class="hero-image-section">
+            <img src="{{images.hero}}" 
+                 alt="고객센터"
+                 class="hero-main-image">
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>{{siteName}}</h3>
+                <p>대표 : {{representative.name}} | 전화 : {{contact.phone}}</p>
+                <p>{{address.full}}</p>
+                <p>고유번호: {{representative.registrationNumber}}</p>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright {{siteName}} all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{services.visitBath.name}} - {{siteName}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <div class="logo-ko">{{siteName}}</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/about">업체소개</a></li>
+                    <li><a href="/services/visit-care" class="active">사찰안내</a></li>
+                    <li><a href="/gallery">갤러리</a></li>
+                    <li><a href="/location">오시는길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>{{services.visitBath.name}}</h1>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="content-section">
+                    <p class="lead">{{services.visitBath.description}}</p>
+                </div>
+
+                {{#if services.visitBath.features}}
+                <div class="content-section">
+                    <h2>주요 서비스</h2>
+                    <ul class="feature-list">
+                        {{#each services.visitBath.features}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                <div class="content-section">
+                    <h2>문의하기</h2>
+                    <p>전화: {{contact.phone}}</p>
+                    <p>운영시간: {{contact.businessHours}}</p>
+                    <a href="/inquiry" class="btn">상담 신청하기</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>{{siteName}}</h3>
+                <p>대표 : {{representative.name}} | 전화 : {{contact.phone}}</p>
+                <p>{{address.full}}</p>
+                <p>고유번호: {{representative.registrationNumber}}</p>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright {{siteName}} all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
+

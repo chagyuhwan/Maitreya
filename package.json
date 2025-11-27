@@ -1,0 +1,35 @@
+{
+  "name": "static-site-generator",
+  "version": "1.0.0",
+  "description": "정적 웹사이트 자동 생성 및 배포 도구",
+  "main": "scripts/generate.js",
+  "scripts": {
+    "generate": "node scripts/generate.js",
+    "generate:all": "node scripts/generate-all.js",
+    "deploy": "node scripts/deploy.js",
+    "deploy:all": "node scripts/deploy-all.js",
+    "deploy:cloudflare": "node scripts/deploy-cloudflare.js",
+    "deploy:cloudflare:all": "node scripts/deploy-cloudflare.js --all",
+    "build": "npm run generate:all",
+    "serve": "http-server sites/site-001 -p 8080 -o",
+    "serve:all": "http-server sites -p 8080 -o"
+  },
+  "keywords": [
+    "static-site",
+    "generator",
+    "s3",
+    "cloudfront"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1509.0",
+    "chalk": "^4.1.2",
+    "fs-extra": "^11.2.0",
+    "handlebars": "^4.7.8",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
