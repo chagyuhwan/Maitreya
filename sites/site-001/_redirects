@@ -1,2 +1,3 @@
-/*    /index.html   200
+# Cloudflare Pages redirects
+# 각 폴더의 index.html이 자동으로 서빙되므로 특별한 리다이렉트 불필요
 
